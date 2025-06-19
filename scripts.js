@@ -7,3 +7,7 @@ function getComputerChoice() {
         return "scissors";
     }
 }
+
+function getHumanChoice() {
+    return prompt("Please enter your play (rock, paper, or scissors):");
+}
