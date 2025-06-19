@@ -1,9 +1,10 @@
 function getComputerChoice() {
-    if (Math.random() < .34) {
+    const rand = Math.random()
+    if (rand < .34) {
         return "rock";
-    } else if (Math.random() < .67) {
+    } else if (rand < .67) {
         return "paper";
-    } else if (Math.random() < 1) {
+    } else if (rand < 1) {
         return "scissors";
     }
 }
@@ -51,7 +52,7 @@ function playGame() {
     let humanScore = 0;
     let computerScore = 0;
 
-    for (let i = 0; i < 4; i++) {
+    for (let i = 0; i < 5; i++) {
         let humanSelection = getHumanChoice();
         let computerSelection = getComputerChoice();
 
@@ -61,7 +62,7 @@ function playGame() {
             computerScore++;
         } else if (result === 1) {
             humanScore++;
-        } 
+        }
     }
 
     if (humanScore > computerScore) {
