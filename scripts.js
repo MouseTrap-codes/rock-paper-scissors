@@ -52,6 +52,10 @@ function playGame() {
     let humanScore = 0;
     let computerScore = 0;
 
+    while (humanScore !== 5 && computerScore !== 5) {
+
+    }
+
     for (let i = 0; i < 5; i++) {
         let humanSelection = getHumanChoice();
         let computerSelection = getComputerChoice();
@@ -75,3 +79,26 @@ function playGame() {
 }
 
 playGame();
+
+
+const rockBtn = document.querySelector(".rock");
+const paperBtn = document.querySelector(".paper");
+const scissorsBtn = document.querySelector(".scissors");
+
+const container = document.querySelector("div");
+
+container.addEventListener("click", (event) => {
+    let target = event.target;
+    
+    if (target.classList.contains("rock")) {
+        let humanChoice = "rock";
+    } else if (target.classList.contains("paper")) {
+        let humanChoice = "paper";
+    } else if (target.classList.contains("scissors")) {
+        let humanChoice = "scissors";
+    }
+});
+
+function getHumanChoice() {
+
+}
