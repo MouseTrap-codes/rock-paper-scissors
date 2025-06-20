@@ -17,7 +17,7 @@ function playRound(humanChoice, computerChoice) {
     const runningScore = document.querySelector(".running-score");
     if (humanChoice === computerChoice) {
         roundResult.textContent = `both you and the bot played ${humanChoice}! the round was a tie!`;
-        runningScore.textContent = `${humanScore} - ${computerScore}`;
+        runningScore.textContent = `running score: ${humanScore} - ${computerScore}`;
         return -1;
     } else if (humanChoice === "rock") {
         if (computerChoice === "paper") {
