@@ -86,6 +86,21 @@ container.addEventListener("click", (event) => {
         }
     } else {
 
+        const rockBtn = document.querySelector(".rock");
+        const paperBtn = document.querySelector(".paper");
+        const scissorsBtn = document.querySelector(".scissors");
+
+        rockBtn.remove();
+        paperBtn.remove();
+        scissorsBtn.remove();
+
+        console.log("test");
+
+        const verdict = document.querySelector(".verdict")
+        const roundResult = document.querySelector(".round-result");
+        roundResult.textContent = "";
+
+
         if (humanScore > computerScore) {
             verdict.textContent = `you won ${humanScore} - ${computerScore}!!!`;
         } else if (computerScore > humanScore) {
@@ -93,12 +108,12 @@ container.addEventListener("click", (event) => {
         } else {
             verdict.textContent = "it was a tie :/";
         }  
-        const verdict = document.querySelector(".verdict")
+
         const resetGameBtn = document.createElement("button");
         resetGameBtn.textContent = "reset game!";
         container.appendChild(resetGameBtn);
 
-        resetGameBtn.addEventListener(click, () => {
+        resetGameBtn.addEventListener("click", () => {
             humanScore = 0;
             computerScore = 0;
             
@@ -107,6 +122,14 @@ container.addEventListener("click", (event) => {
             verdict.textContent = '';
 
             resetGameBtn.remove();
+
+            const childrenOfContainer = container.children;
+
+            container.insertBefore(rockBtn, childrenOfContainer[0]);
+            container.insertBefore(paperBtn, childrenOfContainer[1]);
+            container.insertBefore(scissorsBtn, childrenOfContainer[2]);
+
+
         })
     }
 });
