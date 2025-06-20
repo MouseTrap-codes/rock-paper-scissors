@@ -118,7 +118,9 @@ container.addEventListener("click", (event) => {
             computerScore = 0;
             
             const runningScoreReset = document.querySelector(".running-score");
-            runningScoreReset.textContent = "game reset! -> current score: 0 - 0";
+            const roundResultReset = document.querySelector(".roundResultReset");
+            roundResult.textContent = "game reset!";
+            runningScoreReset.textContent = "running-score: 0 - 0";
             verdict.textContent = '';
 
             resetGameBtn.remove();
