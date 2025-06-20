@@ -61,9 +61,12 @@ const container = document.querySelector("div");
 
 let humanChoice;
 container.addEventListener("click", (event) => {
-    let target = event.target;
+    let target = event.target.closest("button");
+    if (!target || target.disabled) return;
     let humanChoice;
     console.log(target);
+
+
         
     if (target.classList.contains("rock")) {
         humanChoice = "rock";
@@ -90,9 +93,12 @@ container.addEventListener("click", (event) => {
         const paperBtn = document.querySelector(".paper");
         const scissorsBtn = document.querySelector(".scissors");
 
-        rockBtn.remove();
-        paperBtn.remove();
-        scissorsBtn.remove();
+        rockBtn.style.visibility = "hidden";
+        rockBtn.disabled = true;
+        paperBtn.style.visibility = "hidden";
+        paperBtn.disabled = true;
+        scissorsBtn.style.visibility = "hidden";
+        scissorsBtn.disabled = true;
 
         console.log("test");
 
@@ -118,20 +124,19 @@ container.addEventListener("click", (event) => {
             computerScore = 0;
             
             const runningScoreReset = document.querySelector(".running-score");
-            const roundResultReset = document.querySelector(".roundResultReset");
+            const roundResultReset = document.querySelector(".round-result");
             roundResultReset.textContent = "game reset!";
             runningScoreReset.textContent = "running-score: 0 - 0";
             verdict.textContent = '';
 
             resetGameBtn.remove();
 
-            const childrenOfContainer = container.children;
-
-            container.insertBefore(rockBtn, childrenOfContainer[0]);
-            container.insertBefore(paperBtn, childrenOfContainer[1]);
-            container.insertBefore(scissorsBtn, childrenOfContainer[2]);
-
-
+            rockBtn.style.visibility = "visible";
+            rockBtn.disabled = false;
+            paperBtn.style.visibility = "visible";
+            paperBtn.disabled = false;
+            scissorsBtn.style.visibility = "visible";
+            scissorsBtn.disabled = false;
         })
     }
 });
