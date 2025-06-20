@@ -119,7 +119,7 @@ container.addEventListener("click", (event) => {
             
             const runningScoreReset = document.querySelector(".running-score");
             const roundResultReset = document.querySelector(".roundResultReset");
-            roundResult.textContent = "game reset!";
+            roundResultReset.textContent = "game reset!";
             runningScoreReset.textContent = "running-score: 0 - 0";
             verdict.textContent = '';
 
